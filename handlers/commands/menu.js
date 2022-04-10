@@ -82,7 +82,7 @@ module.exports = {
         const buttonsDefault = [
             { urlButton: { displayText: `🍴 Group Bot`, url: `https://chat.whatsapp.com/BLPOAP20ehx9R1wNSNpEcp` } },
             { urlButton: { displayText: `💌 Telegram Bot`, url: `https://t.me/tikdl_bot` } },
-            { quickReplyButton: { displayText: `☎ Owner`, id: `${prefix}owner` } },
+            { quickReplyButton: { displayText: `🤼‍♂️ rules`, id: `${prefix}peraturan` } },
         ]
         client.sendMessage(m.chat, {
             caption: _text,
