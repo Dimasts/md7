@@ -1,12 +1,9 @@
 
 module.exports = {
     tags: ['rules'],
-    cmd: ['peraturan', 'min'],
+    cmd: ['peraturan', 'rules'],
     help: ['rules'],
     exec: (m) => {
-        m.reply('RULES ON
-                1.DILARANG BLA BLA BLA
-                2.DILARANG BLA BLA BLA
-                3.DILARANG BLA BLA BLA')
+        m.reply('RULES ON')
     }
 }
