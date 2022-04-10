@@ -144,6 +144,34 @@ const start = async () => {
     client.ev.on('creds.update', () => saveState)
 
     store.bind(client.ev)
+    
+    client.ev.on('group-participants.update', async (anu) => {
+        console.log(anu.action, anu);
+        try {
+            let jid = anu.id;
+            let meta = await client.groupMetadata(jid)
+            let participants = anu.participants
+            for (let x of participants) {
+                let dp;
+                try {
+                    dp = await client.profilePictureUrl(x, 'image')
+                } catch (error) {
+                    dp = './src/logo.jpg'
+                }
+                //const { buffer } = await getBuffer(dp)
+
+                if (anu.action == 'add') {
+                    client.sendMessage(jid, { image: { url: dp }, mentions: [x], caption: `Sugeng rawuh @${x.split('@')[0]} wonten ing Group *${meta.subject}*` })
+                } else if (anu.action == 'remove') {
+                    client.sendMessage(jid, { image: { url: dp }, mentions: [x], caption: `Sugeng tindak @${x.split('@')[0]}` })
+                } else if (anu.action == 'promote') {
+                    client.sendMessage(jid, { image: { url: dp }, mentions: [x], caption: `Selamat @${x.split('@')[0]} atas jabatan menjadi admin di *${meta.subject}*` })
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    })
 
     client.ev.on('messages.upsert', async (msg) => {
         try {
