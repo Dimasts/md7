@@ -211,10 +211,9 @@ const start = async () => {
           client.sendMessage(jid, {
             image: { url: dp },
             mentions: [x],
-            caption: `Hai @${x.split("@")[0]} Selamat Datang Di Group *${
+            caption: `Sugeng rawuh @${x.split("@")[0]} wonten ing Group *${
               meta.subject
             }*`,
-        ]
           });
         } else if (anu.action == "remove") {
           client.sendMessage(jid, {
