@@ -213,12 +213,7 @@ const start = async () => {
             mentions: [x],
             caption: `Hai @${x.split("@")[0]} Selamat Datang Di Group *${
               meta.subject
-            }*`const btn = [
-            { quickReplyButton: { displayText: `RULES`, id: `${prefix}rules` } },
-        ]
-        client.sendMessage(m.chat, { text: caption, footer: `Â© 2020 - @lorddimas_`, templateButtons: btn }, { quoted: m })
-    }
-},
+            }*`,
         ]
           });
         } else if (anu.action == "remove") {
