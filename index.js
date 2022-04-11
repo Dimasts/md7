@@ -211,9 +211,16 @@ const start = async () => {
           client.sendMessage(jid, {
             image: { url: dp },
             mentions: [x],
-            caption: `Sugeng rawuh @${x.split("@")[0]} wonten ing Group *${
+            caption: `Hai @${x.split("@")[0]} Selamat Datang Di Group *${
               meta.subject
-            }*`,
+            }*`
+            const btn = [
+            { quickReplyButton: { displayText: `RULES`, id: `${prefix}rules` } },
+        ]
+        client.sendMessage(m.chat, { text: caption, footer: `Â© 2020 - @lorddimas_`, templateButtons: btn }, { quoted: m })
+    }
+},
+        ]
           });
         } else if (anu.action == "remove") {
           client.sendMessage(jid, {
