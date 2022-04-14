@@ -28,9 +28,9 @@ kirimkan link yg ingin di download & tunggu bot memproses
 }
 
 module.exports = {
-    cmd: ['menu', 'help'],
+    cmd: ['mc', 'mc'],
     tags: ['main'],
-    help: ['menu', 'help'],
+    help: ['mc', 'mc'],
     exec: async (m, client, { plugins }) => {
         let help = Object.values(plugins).filter(plugin => !plugin.disabled && plugin.help || plugin.regex || plugin.startsWith).map(x => {
             return {
