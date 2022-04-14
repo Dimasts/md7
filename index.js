@@ -207,14 +207,6 @@ const start = async () => {
         }
         //const { buffer } = await getBuffer(dp)
 
-        if (anu.action == "add") {
-          client.sendMessage(jid, {
-            image: { url: dp },
-            mentions: [x],
-            caption: `Sugeng rawuh @${x.split("@")[0]} wonten ing Group *${
-              meta.subject
-            }*`,
-          });
         } else if (anu.action == "remove") {
           client.sendMessage(jid, {
             image: { url: dp },
